@@ -9,7 +9,7 @@ flex-direction: column;
 }
 
 h1{
-    color: coral;
+    color: rgb(28, 199, 133);
 }
 /* налаштування без наведення мишкою */
 a{
@@ -23,3 +23,7 @@ a:hover{
     color: coral;
 }
 
+.homeworks-container{
+    display: flex;
+flex-direction: column;
+}
