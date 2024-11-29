@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+/*   selector * - налаштування для всіх елементів на сторінці */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: whitesmoke;
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.header {
+  height: 400px;
+  background-image: url("./Coffee.jpg");
+  background-position: center; /*  точка старту позиціонування відносно батьківського елементу - div header */
+  background-size: cover; /*  cover - розтягує картинку відносно  background-position */
+  /* background-repeat: no-repeat; */
+}
+
+h1 {
+  font-family: "Covered By Your Grace", serif;
+  font-weight: 400;
+  font-style: normal;
+
+  text-align: center; /*  елемент по центру по горизонталі */
+  font-size: 100px; /*  розмір шрифту */
+ padding-top: 120px; /*  внутрішній відступ від верху контейнера header до елемента - тексту */
+color: rgba(3, 150, 100, .75);
+}
+
+.main{
+position: relative;/*  вибиває з загального потоку, але залишає на тій же позиції */
+
+}
+/* top, left, right, buttom  відносно main  - ці інструменти доступні тільки в тегу position*/
+.left, .right, .center {
+position: absolute; /*  вибиває з загального потоку, але ставить на місце відносно найближчого батька, у якого властивість position була змінена від дефолтної*/
+width: 30%;
+top: 15px;
+}
+
+.left{
+    left: 25px;
+}
+
+.right{
+    right: 25px;
+}
+
+.center{
+right: 35%;
+}

@@ -1,0 +1,91 @@
+
+body {
+/* background-color: whitesmoke;     */
+/* background-color: rgb(30, 10, 255);    від 0 до 255 */
+background-image: url(./nature_photo.jpg);
+background-size: 100% 300%;
+}
+
+
+h1{
+    width: 15%;
+    margin:15% 10%;
+    padding: 10px;
+    border: 3px solid hwb(246 60% 13%);
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 30px -30px 60px  rgba(255, 255, 255, 0.5);
+}
+
+.best {
+    color: #f3f3f3;
+}
+
+.present{
+    width: 100%;
+    border-radius: 5px;
+    padding: 5px 5px 5px 5px; /*  Відступи з усіх чотирьох сторін, починаємо зверху по годинниковій стрілці - верх, право, низ, ліво*/
+    border: none;
+    cursor: pointer;
+}
+    
+
+.fun{
+    width: 30%;
+    border-radius: 5px;
+    padding: 5px 25px 5px 25px; /*  Відступи з усіх чотирьох сторін, починаємо зверху по годинниковій стрілці - верх, право, низ, ліво*/
+    border: none;
+    cursor: pointer;
+
+}
+
+
+input[type="text"],
+input[type="date"],
+input[type="number"]{
+
+    width: 100%;
+    border-radius: 5px;
+    padding: 5px 5px 5px 5px; /*  Відступи з усіх чотирьох сторін, починаємо зверху по годинниковій стрілці - верх, право, низ, ліво*/
+    border: none;
+}
+
+input[type="color"],
+input[type="reset"]{
+
+    width: 30%;
+    border-radius: 5px;
+    padding: 5px 5px 5px 5px; /*  Відступи з усіх чотирьох сторін, починаємо зверху по годинниковій стрілці - верх, право, низ, ліво*/
+    border: none;
+    cursor: pointer;
+}
+
+
+button{
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    background-color: rgb(49, 231, 171);
+}
+
+
+form {
+width: 80%;
+ margin: -28% auto; /*   перше значення - вертикаль, друге - горизонталь (значення auto - це середина)*/
+max-width: 400px;
+/* margin: зовнішні відступи елемента */
+/* padding: внутрішні відступи елемента */
+padding: 20px; /*  Відступи з усіх чотирьох сторін*/
+ border: 3px solid hwb(246 60% 13%);/*solid - тип лінії - звичайна */
+ border-radius: 20px; /* округлення кутів */
+/* налаштування тіні -> перше значення це вісь x (горизонталь), додатнє значення вправо, від'ємне - вліво/
+/* налаштування тіні ->друге значення це вісь y (вертикаль), додатнє значення вверх, від'ємне - вниз/
+ /* rgba - рівень прозорості, 0 - повністю прозорий, 1 - повністю непрозорий */
+ /* розмиття тіні - як швидко тінь зливається з фоном */
+ /* колір тіні */
+/* box-shadow: 10px 10px  10px rgba(15, 8, 1); */
+box-shadow: 30px -30px 60px  rgba(255, 255, 255, 0.5);
+/* background-color: rgb(205, 190, 236); */
+
+}

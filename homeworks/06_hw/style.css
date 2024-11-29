@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url(".//img/coffe-cup-1.jpg");
+  background-size: cover;
+  flex-direction: column;
+  align-items: center;
+
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 15px;
+}
+
+h3 {
+  font-family: "Covered By Your Grace", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 30px;
+  color: rgba(76, 221, 173, 0.75);
+}
+
+.main {
+  width: 100%;
+  min-height: 500px;
+  padding: 15px 0;
+  display: flex;
+  gap: 10px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.header {
+  min-height: 200px;
+  display: flex;
+  color: gainsboro;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 5px 150px;
+  font-size: 25px;
+}
+
+.Coffee > img {
+  width: 250px;
+}
+
+.Coffee {
+  display: flex;
+  align-items: center;
+  width: 300px;
+  height: 400px;
+  padding: 5px;
+  /* background-color: aqua; */
+  color: gainsboro;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.footer {
+  min-height: 200px;
+  display: flex;
+  padding: 20px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  align-content: center;
+  font-size: 25px;
+}

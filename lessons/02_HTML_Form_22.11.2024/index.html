@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <style>
+      h1{
+          text-align: center
+      }
+    </style> -->
+    <!-- 
+    ./ -> треба залишитись в тому в пакеті
+    ../ -> треба вийти у зовнішній в пакет
+
+    -->
+    <link rel="stylesheet" href="./style.css">
+    <title>Form</title>
+  </head>
+
+  <!--
+  
+  Де буде задаватись стилістика
+    1. Inline-styles ( задається в тій самій строчці де і елемент);
+    2. Окремий тег style
+    3. Окремий файл з розширенням .css
+
+  За допомогою чого будуть вибиратись елемент/елементи налаштувань стилістики (selector)
+  1. За допомогою імені тега
+  2. За допомогою значення будь-якого атрибуту (частіше використовують атрибут class або id)
+  1. За допомогою імені тега
+
+
+  -->
+
+  <body>
+    <!-- <h1 style="text-align: center;">Signup Form</h1> -->
+    <h1>Signup Form</h1>
+
+    <form>
+      <!-- Дефолтный блочный элемент - div -->
+      <!-- Дефолтный строчный элемент - span -->
+      <div>
+        <label for="name">Name:</label>
+        <input id="name" type="text" placeholder="Enter your name..." required />
+      </div>
+        <!-- переход на новую строку br -->
+      <br/>
+
+      <div>
+        <label for="email">Email:</label>
+        <input id="email" type="email" placeholder="Enter your email..." required />
+      </div>
+
+      <br/>
+
+      <div>
+        <label for="phone">Phone:</label>
+        <input 
+          id="phone" 
+          title="Example: +123-456-7890"
+          type="tel" 
+          placeholder="Example: +123-456-7890" 
+          pattern="\+[0-9]{3}-[0-9]{3}-[0-9]{4}"
+          required />
+      </div>
+        <!-- pattern="[+][0-9]{3}-[0-9]{3}-[0-9]{4}"  34 и 37 строки имеют одинаковый смысл  -->
+        <!-- pattern="[+][0-9]{3}-[0-9]{3}-[0-9]{4}"  34 и 37 строки имеют одинаковый смысл  -->
+        <!--           pattern="\+[0-9]{3}-[0-9]{3}-[0-9]{4}"  34 и 37 строки имеют одинаковый смысл  -->
+
+        <!-- 
+        <label>Type: *
+          <input type="text" placeholder="Enter type of your pet..." title="Cat, dog, hamster..." required />
+    </label> 
+    -->
+
+
+      <br/>
+
+      <div>
+        <label for="pass">Password:</label>
+        <input id="pass" type="password" placeholder="Enter your password..." minlength="8"  required />
+      </div>
+
+      <br/>
+
+      <div>
+        <label for="hobby">Hobby:</label>
+        <select  id="hobby" required>
+            <option  value="">Choose your hobby:</option>
+            <option  value="Football">Football </option>
+            <option  value="Chess">Chess - best sport from all over the world ! </option>
+            <option  value="no">No in this list </option>
+        </select>
+      </div>
+
+      <br/>
+
+      <div>
+        <label for="email">Email:</label>
+        <input id="email" type="" placeholder="Enter your email..." required />
+      </div>
+
+      <br/>
+
+      <div>
+        <label for="agree">I agree</label>
+        <input id="agree" type="checkbox"   required />
+      </div>
+
+      <br/>
+
+      <div>
+        <label for="male">Male</label>
+        <input id="male" type="radio" name="gender" value="male" required />
+      </div>
+
+      <br/>
+
+      <div>
+        <label for="female">Female</label>
+        <input id="female" type="radio" name="gender" value="female" required />
+      </div>
+
+      <br/>
+      <button class="reset">Reset</button>
+    <button class="submit">Finish!</button>
+    </form>
+  </body>
+</html>

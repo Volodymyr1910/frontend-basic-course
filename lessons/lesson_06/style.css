@@ -1,0 +1,54 @@
+body{
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+
+
+
+.animal-gallery{
+     width: 100%;
+    min-height: 1000px; /* уточнення min - якщо контенту мало, висота не буде меншою за 1000px, якщо контенту багато -  animal-gallery буде автоматично розтягуватись */
+    padding: 15px 0;
+     background-color: lightgray;
+     border: 1.5px solid;
+    /* задаємо правило для батьківського елементу, що впливають на всіх дітей */
+    display:flex; /* елементи отримайте властивість флекс, що відкриває доступ до інструментів flex */
+    gap: 10px; /* відступи між елементами */
+    /* центрувати flex елементи  по головній осі*/
+    /* justify-content: end; елементи з правого краю */
+    /* justify-content: space-between;  елементи стають по краях відносно головної осі, а між ними вільний простір, що автоматично рівно розподіляється*/
+    /* justify-content: center; клементи по центру */
+    justify-content: center;
+    align-items:center; /* керує поведінкою флекс елементів по вертикальній осі */
+    flex-wrap: wrap; /* включили перенос елементів якщо не влазять в головну вісь */
+    /* відповідає за групування елементів при переності карток через  flex-wrap, якщо flex-wrap перенос не використовувався, то align-content не працює*/
+    align-content: center;
+}
+
+
+
+
+/* всі картинки всередині .animal-card отримують налаштування - якщо без знаку > */
+/* якщо із знаком > - налаштування впливає тільки на перший рівень*/
+/* селектор для об'єктів типу img */
+.animal-card > img{
+width: 300px;
+}
+
+/* селектор для контейнера с даними по тваринах */
+.animal-card {
+    display: flex;
+    flex-direction: column; /* зробили вертикальну вісь - головною для флекс контейнера */
+    /* якщо змінено  flex-direction на column, то align-items керує горизонталью, а justify-content - керує вертикалью*/
+    /* тобто  justify-content керує головною віссю, а align-items - курує вторинною, При цьому яка вісь (горизонт чи вертикаль) є головною - визначає flex-direction*/
+    /* за замовчуванням головна вісь горизонталь, flex-direction: column - змінює головну на вертикаль, flex-direction: row - змінює головну на горизонталь*/
+    align-items: center;
+    justify-content: center;
+    width: 350px;
+    height: 250px;
+background-color: bisque;
+}
+
+ 

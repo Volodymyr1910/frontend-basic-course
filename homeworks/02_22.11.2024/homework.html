@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styleMyHW.css" />
+    <title>Person Favorites</title>
+  </head>
+
+  <body>
+    <!-- <h1 style="text-align: center;">Ваші вподобання</h1> -->
+    <h1>Ваші вподобання</h1>
+    <form>
+      <div>
+        <div><label for="name">Ім'я:</label></div>
+        <input
+          id="name"
+          type="text"
+          style="background-color: rgb(239, 245, 165)"
+          placeholder="Введіть Ваше ім'я"
+          required
+        />
+      </div>
+
+      <br />
+
+      <div>
+        <div><label for="1">Оберіть стать:</label></div>
+        <div>Чоловік <input id = "1" name = "gender" type="radio" /<br /></div>
+        <div>Жінка<input name="gender" type="radio" required /></div>
+        <div>Не визначено<input name="gender" type="radio" /></div>
+      </div>
+
+      <br />
+
+      <div>
+        <div><label for="8">Дата народження:</label></div>
+        <input
+          id="8"
+          style="background-color: rgb(239, 245, 165)"
+          type="date"
+          required
+        />
+      </div>
+
+      <br />
+
+      <div>
+        <div><label for="2">Ваше фото:</label></div>
+        <input id="2" type="image" />
+      </div>
+
+      <br />
+
+      <div>
+        <div><label for="3">Улюблений колір:</label></div>
+        <input
+          id="3"
+          style="background-color: rgb(239, 245, 165)"
+          type="color"
+          required
+        />
+      </div>
+
+      <br />
+
+      <div>
+        <div><label for="4">Скільки разів на день ви смієтеся?</label></div>
+        <input
+          id="4"
+          style="background-color: rgb(239, 245, 165)"
+          type="number"
+          placeholder="в середньому :)"
+          required
+        />
+      </div>
+
+      <br />
+
+      <div>
+        <div><label for="5">Рівень вашої активності:</label></div>
+        <input id="5" type="range" required />
+      </div>
+
+      <br />
+
+      <div>
+        <div><label for="6">Улюблені розваги:</label></div>
+
+        <span>
+          <select
+            id="6"
+            style="background-color: rgb(239, 245, 165)"
+            class="fun"
+          >
+            <option value="">Ативні</option>
+            <!-- зробити 2 випадаючих списки Активні і Пасивні -->
+            <option value="Foosball">Футбол</option>
+            <option value="Valleyball">Волейбол</option>
+            <option value="Bascetball">Баскетбол</option>
+            <option value="Box">Книга Бокс</option>
+            <option value="Tenis">Теніс</option>
+            <option value="Swim">Плавання</option>
+            <option value="Run">Біг</option>
+            <option value="Other">Інше</option>
+            <option value="No interest">Нічого не цікавить</option>
+          </select>
+
+          <select style="background-color: rgb(239, 245, 165)" class="fun">
+            <option value="">Пасивні</option>
+            <!-- зробити 2 випадаючих списки Активні і Пасивні -->
+            <option value="Chess">Шахи</option>
+            <option value="Monopoly">Монополія</option>
+            <option value="Poker">Покер</option>
+            <option value="Books">Читання книжок</option>
+            <option value="Movie">Перегляд кіно</option>
+            <option value="PC art">Творчість на комп'ютері</option>
+            <option value="Paint">Писання картин</option>
+            <option value="Other">Інше</option>
+            <option value="No interest">Нічого не цікавить</option>
+          </select>
+        </span>
+      </div>
+      <br />
+
+      <div>
+        <div><label for="9" class="best">Завантажити резюме:</label></div>
+        <input id="9" style="color: rgb(243, 241, 241)" type="file" />
+      </div>
+
+      <br />
+
+      <div>
+        <div>
+          <label for="present" class="best"
+            >Отримайте подарунок за опитування:</label
+          >
+        </div>
+        <select
+          style="background-color: rgb(239, 245, 165)"
+          id="present"
+          class="present"
+          required
+        >
+          <option value="">Оберіть подарунок:</option>
+          <option value="">Без подарунка.</option>
+          <option value="orphanage">
+            Благодійний внесок на дитячий сиротинець.
+          </option>
+          <option value="cinema">Два білети на стрічку "Гладіатор 2"</option>
+          <option value="book">
+            Книга "Основи бджолярства. Золоте видання"
+          </option>
+        </select>
+      </div>
+      <br />
+      <div>
+        <input style="background-color: rgb(219, 120, 133)" type="reset" />
+      </div>
+
+      <br />
+
+      <span>
+        <label for="10" class="best">
+          Погоджуюсь з політикою конфіденційності
+        </label>
+        <input id="10" type="checkbox" required />
+      </span>
+
+      <br />
+
+      <br />
+
+      <button>Завершити</button>
+    </form>
+  </body>
+</html>
+
+<!-- input[type="text"] {
+  background-color: #f0f8ff; /* Колір фону */
+  color: #333;              /* Колір тексту */
+  border: 2px solid #ccc;   /* Рамка */
+  border-radius: 5px;       /* Згладжені кути */
+  padding: 10px;            /* Внутрішній відступ */
+  width: 100%;              /* Ширина */
+  font-size: 16px;          /* Розмір шрифту */
+} -->
