@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a{
+    text-decoration: none;
+    color: rgb(88, 140, 218);
+}
+
+.header {
+  min-height: 300px;
+  background-color: rgba(142, 186, 224, 1);
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.header-image {
+  width: 550px;
+}
+
+.main-container {
+  background-image: url("./image/collage_130.jpg");
+  background-size: cover;
+
+  display: grid;
+
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-rows: 350px;
+
+  gap: 10px;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.item {
+  color: aliceblue;
+  background-image: url("./image/ocean.jpg");
+  background-size: contain;
+  background-position: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  align-content: center;
+  padding: 10px;
+}
+
+.link{
+    background-image: url("./image/collage_130.jpg");
+}
