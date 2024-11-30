@@ -39,7 +39,7 @@ a{
 .item {
   color: aliceblue;
   background-image: url("./image/ocean.jpg");
-  background-size: contain;
+  background-size: cover;
   background-position: center;
 
   display: flex;
@@ -52,5 +52,13 @@ a{
 }
 
 .link{
-    background-image: url("./image/collage_130.jpg");
+  
+    height: 250px;
+    width: 150px;
+}
+
+.link_in_link{
+  
+  height: 50px;
+  width: 150px;
 }
