@@ -1,0 +1,107 @@
+body{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+    /* при значенні 50vh нижній кордон боді на 50% екрану(вікна браузера); vh - viewport height - висота видимої області браузера; vw - viewport width - ширина видимої області браузера */
+    /* min-height: 50vh;  */
+
+}
+h1{
+    color: hsl(155, 70%, 44%);
+}
+header{
+    /* прикріпили хедер на верху сторінки */
+    position:sticky;
+    /* вказали координату, до якої прикріпитись атрибутом sticky - top, left, right, bottom, розмір в пікселях*/
+    top: 0px;
+background-color: hsl(155, 70%, 44%);
+height: 80px;
+}
+main{
+    /* налаштування для флекс елемента, щоб він розтягнувся по розміру контейнера-батька */
+    flex: 1;
+    padding: 0 30px;
+
+}
+footer{
+    background-color: hsl(157, 11%, 71%);
+    height: 50px;
+}
+.grid-gallery{
+    display: grid;
+    gap: 10px;
+/* просте налаштування, 4 колонки на пристоях будь-якої ширини */
+    /* grid-template-columns: repeat(4, 1fr); */
+
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    /* grid-auto-rows: 80px; всі елементи всередині грід контейнера будуть 80px висоты строки */
+}
+.grid-gallery a{
+   
+    color: black;
+    text-decoration: none;
+    /* налаштування ефекту збільшення - щоб збільшення відбувалось плавно із затримкою в 0.3 секунди */
+    transition: transform 0.3s ease;
+}
+.grid-gallery a:hover{
+    /* збільшення маштабу картки при наведенні мишкою */
+    transform: scale(1.1);
+    /* налаштування змінювати колір фону картки і колір тексту при наведенні мишкою - не працює якщо при наведенні мишкою є ефект збільшення*/
+   /* background-color: rgb(77, 236, 138);
+   color: aliceblue; */
+}
+
+/* якщо не поставити '>' властивість буде стосуватись всіх елементів дітей, а не тільки прямих */
+.grid-gallery  section{
+    
+    /* background-color: aquamarine; */
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 12px;
+    background-color: white;
+}
+.grid-gallery img{
+    width: 100%;
+    height: 100%;
+    /* задаэмо щоб края що не входять в рамку-контейнер, обрізались */
+    object-fit: cover;
+}
+/* задаємо розмір контейнеру-рамці для фото */
+.grid-gallery div{
+    height: 120px
+}
+
+/* властивості для екранів розміром менше 669px*/
+@media(max-width: 669px){
+    header{
+        background-color: rgb(157, 224, 202);
+    }
+    .grid-gallery div{
+        height: 100px
+    }
+    
+}
+
+/* властивості для екранів розміром менше 464px*/
+@media(max-width: 464px){
+    header{
+        background-color: rgb(18, 226, 157);
+    }
+    
+    .grid-gallery div{
+        height: 170px
+    }
+    
+}
+
+@media(max-width: 404px){
+    header{
+        background-color: rgb(18, 226, 157);
+    }
+    
+    .grid-gallery div{
+        height: 200px
+    }
+    
+}

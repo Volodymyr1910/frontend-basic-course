@@ -18,12 +18,23 @@ a{
 }
 
 /* налаштування з псевдокласом hover будуть працювати при наведенні на елементи а */
-a:hover{
+/* a:hover{
     text-decoration: underline;
     color: coral;
-}
+} */
 
 .homeworks-container{
     display: flex;
 flex-direction: column;
+
 } 
+
+/* стили с псевдоклассом hover применятся к элементу при наведении на него мышкой */ 
+.lessons-container > a:hover{ text-decoration: underline; color: coral; } 
+.homeworks-container > a:hover { text-decoration: underline; color: forestgreen; }
+
+/* кожному лінку при створенні буде додаватись контент */
+.lessons-container > a::before{ content: "⚡"; } 
+.lessons-container > a::after{ content: "🐾"; } 
+.homeworks-container > a::before{ content: "☣️"; } 
+.lessons-container > a::after{ content: "🐾"; } 
