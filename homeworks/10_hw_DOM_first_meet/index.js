@@ -29,4 +29,5 @@ clonedBtn.addEventListener("click", () => {
 btn.style.color = "black";
 clonedBtn.innerText = "I have changed you ! 😁"
 clonedBtn.id = "text";
+document.querySelector("title").innerText = "D-O-N-E !   ⚡⚡⚡";
 })
