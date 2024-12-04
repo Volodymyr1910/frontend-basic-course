@@ -21,6 +21,7 @@ header{
     position: sticky;
     top: 0px;
     padding: 16px 24px;
+    /* якщо елементи накладаются один на одного, можна поставити приоритет елементам, у кого цифра вище той ы маэ більше прав */
     z-index: 1;
 }
 
@@ -152,6 +153,18 @@ header a{
     width: 100%;
     height: auto;
 }
+
+/* .gallery_variants_box_images {
+    position: relative;
+  }
+  .gallery_background_arrow {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 15% !important;
+    height: auto;
+    z-index: 1;
+  } */
 
 /* -----------------------------FOOTER---------------------------- */
 
