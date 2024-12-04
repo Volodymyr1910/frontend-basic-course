@@ -37,4 +37,3 @@ flex-direction: column;
 .lessons-container > a::before{ content: "⚡"; } 
 .lessons-container > a::after{ content: "🐾"; } 
 .homeworks-container > a::before{ content: "☣️"; } 
-.lessons-container > a::after{ content: "🐾"; } 
