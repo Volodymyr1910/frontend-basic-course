@@ -82,7 +82,7 @@ btnFinish.addEventListener("click", () => {
                                         console.log(isHuman); // => true
          
         console.log("-------------------------------------------------------------------------------")
-                                        tr1 = "123smth"
+                                        str1 = "123smth"
                                         myNumber = parseInt(str1);
                                         console.log(myNumber) // => 123
 
