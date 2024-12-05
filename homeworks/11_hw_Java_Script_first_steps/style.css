@@ -1,0 +1,26 @@
+.button-class{
+    margin: 250px;
+    border: none;
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 20px;
+    background-color: aquamarine;
+    color: deeppink;
+}
+
+#new{
+    margin: 50px;
+    background-color: rgb(233, 255, 137);
+    color: rgb(107, 80, 231);
+    border: 5px dotted rgb(197, 56, 178);
+}
+
+.empty{
+    margin: 20px;
+    background-color: white;
+    color: white;
+    border: none;
+}
+
+
+
