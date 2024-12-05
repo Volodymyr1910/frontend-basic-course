@@ -50,22 +50,9 @@ btnFinish.addEventListener("click", () => {
    document.body.style.backgroundRepeat = "no-repeat";
     document.querySelector("h1").style.color = "white";
     document.querySelector("title").innerText = "⚡⚡⚡    D-O-N-E !   ⚡⚡⚡";
+    document.querySelector("p").style.fontSize = " 30px "
+      document.querySelector("p").style.color = "purple"
     document.querySelector("p").innerText = () => {
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-
 
 
 
