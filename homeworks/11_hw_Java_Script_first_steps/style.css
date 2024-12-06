@@ -16,10 +16,11 @@
 }
 
 .empty{
-    margin: 20px;
+    margin: 0px;
     background-color: white;
     color: white;
     border: none;
+    padding: 0px;
 }
 
 
