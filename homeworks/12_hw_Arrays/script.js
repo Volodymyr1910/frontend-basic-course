@@ -1,107 +1,112 @@
-console.log("Hallo")
-// ! arrays
-let numbers = [1, 2, 3, 4, 5];
-// можна створювати масиви, що мають в собі різні типи даних, але, як правило, це не зручно і робити не потрібно
-let arr1 = ["apple", "orange", "banana", "grape", 8, true, undefined];
-let fruits = ["apple", "orange", "banana", "grape"];
-console.log(arr1);
-// cкладний тип даних, масиви у квадратних дужках, індекс починається з нуля
-let itemFirst = arr1[0];
-let itemLast = arr1[arr1.lenght - 1]
+console.log("==================================== Task 1 =================================")
 
-let secret = arr1[10];
-// при зверненні до не існуючого індекса - отримуємо undefined
-console.log(secret);
+//Задание 1
+// Создайте массив с элементами: "Мария", "Алексей", "Елена", "Дмитрий". Создайте массив с возрастами: 22, 31, 45, 53. Создайте новый массив, заполнив его элементами в формате "имя возраст лет/годов".
 
-//виводимо значення довжини масиву
-let lenght = arr1.length;
-console.log("довжина масиву arr1 ==> ", lenght)
+let nameArray = ["Мария", "Алексей", "Елена", "Дмитрий"];
+let ageArray = [22, 31, 45, 53];
+let extra = " років"
+let finishArray = [];
 
-// ! arrays methods - push(), pop() - мутуючі, працюють з кінцем масиву
-// всі методи в JS ділять на 2 групи :
-// 1. мутуючі - змінюють первинне джерело -> push(), pop()
-// 2. не мутуючі - не зміннюють первинне джерело, повертають новий об'єкт із зміненими даними
-  
-// видаляє останній  елемент масиву
-let lastFruit = fruits.pop();
-// додає новий елемент в кінець масиву
-fruits.push("pineapple")
-console.log(fruits)
+for (let index = 0; index < nameArray.length;) {
+       finishArray.push(nameArray[index] + " " + ageArray[index] + extra)
+        index++ 
+}
+console.log(finishArray); // ===> ['Мария 22 років', 'Алексей 31 років', 'Елена 45 років', 'Дмитрий 53 років']
 
-let arr = fruits.push("pineapple");
-console.log("в arr попадає довжина масиву після додавання елементу => ", arr)
+console.log("==================================== Task 2 =================================")
 
-arr = fruits.pop();
-console.log("в arr попадає видалений елемент => ", arr)
-arr = fruits;
-console.log(arr)
-arr.pop();
-console.log( "після видалення останнього елементу", arr)
-arr.push("watermelone")
-console.log("після додавання нового елементу в кінець масиву ",arr)
+// Задание 2
+// Используя методы массива, получите из этого массива новый массив, в котором элементы идут в обратной последовательности.
+console.log(finishArray.reverse()); // ===> ['Дмитрий 53 років', 'Елена 45 років', 'Алексей 31 років', 'Мария 22 років']
 
-console.log("---------------------unshift(), shift()--------------------------")
-// ! arrays methods - unshift(), shift() -  - мутуючі, працюють з початком масиву
-let planets = ["Mars", "Venus", "Earth", "Saturn"]
+console.log("==================================== Task 3 =================================")
 
+// Задание 3
+// Создайте пустой массив countries. Добавьте в массив следующие страны: "Франция", "Германия", "Италия". Удалите последний элемент из массива и сохраните значение в переменной. Добавьте его в начало массива. Выведите countries в консоль.
 
-// видаляє перший  елемент масиву, і повертає видалений елемент
-planets.shift();
-console.log(planets)
-// додає новий елемент в початок масиву і повертає довжину масиву після додавання
+let countries = ["Франция", "Германия", "Италия"];
+ countries.unshift(countries.pop())
+console.log(countries) // ===> ['Италия', 'Франция', 'Германия']
 
-planets.unshift("Mercury");
-console.log(planets)
+console.log("==================================== Task 4 =================================")
 
-// ! for loop - цикл for
-for (let i = 0; i < fruits.length; i++) {
+// Задание 4
+// Создайте массив с числами 1, 2, 3, 4, 5. Используя цикл for:
 
-console.log(i, fruits[i])
-console.log(fruits[i])
-};
+// Умножьте каждый элемент на 2 и выведите результат в консоль.
+// Создайте новый массив, где каждый элемент будет равен квадрату элемента из исходного массива.
+// Выведите оба массива (исходный и новый) в консоль.
 
-// ! while - цикл
-let count = 0;
-while(count++ < 5) console.log(count);
-let ccc = (fruits.length > 2) ? 9 : 5
-console.log(ccc)
+let num = [1, 2, 3, 4, 5];
+let newNum = [];
+for (let index = 0; index < num.length; index++) {
+    num[index] *= 2;
+}
+console.log(num)
 
-// ! методи роботи зі строками
+for (let index = 0; index < num.length; index++) {
+    newNum[index] = Math.pow(num[index], 2)
+}
+console.log("Origin array: ",num);  // ===> Origin array:  (5) [2, 4, 6, 8, 10]
+console.log("New array: ", newNum); // ===> New array:  (5) [4, 16, 36, 64, 100]
 
-// знайти довжину строки - властивість lenght
-let planet = "Planet Earth";
-let planetLenght = planet.length;
-console.log("довжина змінної planet :", planetLenght)
+let p = document.querySelector(".task");
 
-// приведення строки до нижнього регістру методом toLowerCase()
-let lowerCase = planet.toLowerCase();
-console.log("планета в нижньому регістрі",lowerCase)
-
-// приведення строки до верчнього регістру методом toLowerCase()
-lowerCase = planet.toUpperCase();
-console.log("планета в верхньому регістрі",lowerCase)
+p.innerText = () => {
 
 
-// отримання підстроки методом substring() - не мутуючий
+    console.log("==================================== Task 1 =================================")
 
-let sss = planet.substring(0, 6); // лівий ундекс входить, правий індекс не входить
-console.log(sss)
+//Задание 1
+// Создайте массив с элементами: "Мария", "Алексей", "Елена", "Дмитрий". Создайте массив с возрастами: 22, 31, 45, 53. Создайте новый массив, заполнив его элементами в формате "имя возраст лет/годов".
 
-// пошук індекса підстроки
+let nameArray = ["Мария", "Алексей", "Елена", "Дмитрий"];
+let ageArray = [22, 31, 45, 53];
+let extra = " років"
+let finishArray = [];
 
-let indexOfPlanet = planet.indexOf("Earth") // если в строке елемента нет - будет -1
-console.log("індекс початку підстроки Earth",indexOfPlanet)
-console.log("символ під індексом 3 => ", planet[3])
+for (let index = 0; index < nameArray.length;) {
+       finishArray.push(nameArray[index] + " " + ageArray[index] + extra)
+        index++ 
+}
+console.log(finishArray); // ===> ['Мария 22 років', 'Алексей 31 років', 'Елена 45 років', 'Дмитрий 53 років']
 
-// ! операції з числами за допомогою об'єкту Math
+console.log("==================================== Task 2 =================================")
 
-let random = Math.random(); // за замовчуванням число від 0 до 1; (дробне !!!!)
-console.log(random)
+// Задание 2
+// Используя методы массива, получите из этого массива новый массив, в котором элементы идут в обратной последовательности.
+console.log(finishArray.reverse()); // ===> ['Дмитрий 53 років', 'Елена 45 років', 'Алексей 31 років', 'Мария 22 років']
 
-//випадкове число выд 0 до 1
-let randomFloor = Math.random() * 100; // число буде від 0 до 99 включно;
-console.log("без округлення: ",randomFloor)
-randomFloor = Math.random() * 100 + 1; // число буде від 1 до 100 включно;
-randomFloor = Math.floor(Math.random() * 100) + 1; // округлення вниз
-randomFloor = Math.ceil(Math.random() * 100) + 1; // округлення вверх
-console.log("з округленням: ", randomFloor)
+console.log("==================================== Task 3 =================================")
+
+// Задание 3
+// Создайте пустой массив countries. Добавьте в массив следующие страны: "Франция", "Германия", "Италия". Удалите последний элемент из массива и сохраните значение в переменной. Добавьте его в начало массива. Выведите countries в консоль.
+
+let countries = ["Франция", "Германия", "Италия"];
+ countries.unshift(countries.pop())
+console.log(countries) // ===> ['Италия', 'Франция', 'Германия']
+
+console.log("==================================== Task 4 =================================")
+
+// Задание 4
+// Создайте массив с числами 1, 2, 3, 4, 5. Используя цикл for:
+
+// Умножьте каждый элемент на 2 и выведите результат в консоль.
+// Создайте новый массив, где каждый элемент будет равен квадрату элемента из исходного массива.
+// Выведите оба массива (исходный и новый) в консоль.
+
+let num = [1, 2, 3, 4, 5];
+let newNum = [];
+for (let index = 0; index < num.length; index++) {
+    num[index] *= 2;
+}
+console.log(num)
+
+for (let index = 0; index < num.length; index++) {
+    newNum[index] = Math.pow(num[index], 2)
+}
+console.log("Origin array: ",num);  // ===> Origin array:  (5) [2, 4, 6, 8, 10]
+console.log("New array: ", newNum); // ===> New array:  (5) [4, 16, 36, 64, 100]
+
+}
