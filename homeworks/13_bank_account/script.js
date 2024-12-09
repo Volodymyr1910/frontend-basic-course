@@ -1,5 +1,20 @@
 
-/*створити об'єкт, який буде називатись bankAccount:
+let b = document.querySelector("div")
+b.style.display = "flex";
+b.style.flexDirection = "column";
+b.style.alignItems = "center";
+
+
+
+let p = document.querySelector("p");
+p.style.fontSize = "20px";
+p.style.color = "forestgreen";
+p.style.fontFamily = "Arial";
+document.body.style.padding = "20px";
+
+
+p.innerText = () => {
+    /*створити об'єкт, який буде називатись bankAccount:
 
 1. accountNumber = "123456789"
 2. accountHoldername = "Alice"
@@ -11,8 +26,6 @@
 */
 
 let sum = 50;
-
-
 
 let bankAccount = {
     accountNumber :"123456789",
@@ -36,9 +49,10 @@ bankAccount.checkBalance = function(){
     console.log(`Поточний баланс: ${bankAccount.balance} євро.`)
 }
 
-bankAccount.checkBalance();
-bankAccount.deposit(sum);
+bankAccount.checkBalance(); // => Поточний баланс: 0 євро.
+bankAccount.deposit(sum);   // => Сума 50 євро додана до рахунку. Поточний баланс: 50 євро.
 sum = 150;
-bankAccount.withdraw(sum)
+bankAccount.withdraw(sum)   // => Не достатньо грошей на рахунку !
 sum = 30;
-bankAccount.withdraw(sum)
+bankAccount.withdraw(sum)   // => Сума 30 євро знята з рахунку. Поточний баланс: 20 євро.
+}
