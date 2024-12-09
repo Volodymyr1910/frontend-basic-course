@@ -14,8 +14,10 @@ let extra = " років"
 let finishArray = [];
 
 for (let index = 0; index < nameArray.length;) {
-       finishArray.push(nameArray[index] + " " + ageArray[index] + extra)
-        index++ 
+    //    finishArray.push(nameArray[index] + " " + ageArray[index] + extra) // конкатенація
+    //     index++ 
+        finishArray.push(`${nameArray[index]} ${ageArray[index]}  extra`) // шаблонна строка
+         index++ 
 }
 console.log(finishArray); // ===> ['Мария 22 років', 'Алексей 31 років', 'Елена 45 років', 'Дмитрий 53 років']
 
