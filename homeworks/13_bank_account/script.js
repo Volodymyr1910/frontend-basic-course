@@ -4,14 +4,11 @@ b.style.display = "flex";
 b.style.flexDirection = "column";
 b.style.alignItems = "center";
 
-
-
 let p = document.querySelector("p");
 p.style.fontSize = "20px";
 p.style.color = "forestgreen";
 p.style.fontFamily = "Arial";
 document.body.style.padding = "20px";
-
 
 p.innerText = () => {
     /*створити об'єкт, який буде називатись bankAccount:
@@ -34,12 +31,14 @@ let bankAccount = {
 }
 
 bankAccount.deposit = function(){
-    bankAccount.balance += sum;
-    console.log(`Сума ${sum} євро додана до рахунку. Поточний баланс: ${bankAccount.balance} євро.`)
+    if(sum < 5 && sum >= 5000 ) console.log("Некоректна сумма поповнення !")
+    // sum >= 5 && sum <= 5000 ? this.balance += sum : alert ("console.log(Некоректна сумма поповнення !)")
+    else { bankAccount.balance += sum;
+    console.log(`Сума ${sum} євро додана до рахунку. Поточний баланс: ${bankAccount.balance} євро.`) }
 }
 
 bankAccount.withdraw = function(sum){
-    if(bankAccount.balance >= sum){
+    if(bankAccount.balance >= sum && sum > 0){
         bankAccount.balance -= sum;
         console.log(`Сума ${sum} євро знята з рахунку. Поточний баланс: ${bankAccount.balance} євро.`)
     }else console.log("Не достатньо грошей на рахунку !")
@@ -56,3 +55,8 @@ bankAccount.withdraw(sum)   // => Не достатньо грошей на ра
 sum = 30;
 bankAccount.withdraw(sum)   // => Сума 30 євро знята з рахунку. Поточний баланс: 20 євро.
 }
+
+// Приклади модальних вікон :
+alert("Привіт з модального вікна!"); // повідомлення
+let answer = confirm("Закрити сторінку?"); // підтвердження або відмова boolean
+answer = prompt("ВВедіть ваше прізвище:"); // підтвердження або відмова string, або null якщо користувач натисне cancel

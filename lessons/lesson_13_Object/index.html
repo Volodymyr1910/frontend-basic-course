@@ -3,11 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">i
     <script src="./script.js" defer></script>
     <title>Document</title>
 </head>
 <body>
-    <H1>Все в консолі</H1>
     
+    <section id = "create">
+        <label for="name">Name:</label>
+        <input type="text" id = "name">
+        <button onclick ="createAccount()">Create new account</button>
+        <button id = "show" onclick ="showAccounts()">Show all accounts</button>
+    </section>
+
+    <br>
+
+    <section>
+    <ol id = "accountList">
+       <!--     ul - unordered list ненумерований (маркований) список
+                ol - ordered list нумерований список -->
+      
+
+    
+    </section>
+
+    <br>
+
+    <section id = "change">
+            <label for="accountId">Account ID:</label>
+            <input type="text" id = "accountId">
+
+            <label for="amount">Amount:</label>
+           
+            <input type="number" id = "amount"> <!-- value => string !!! -->
+
+            <!-- Use Event Listener 2 variants-->
+            <!-- <button onclick="deposit()">Deposit</button>
+            <button onclick="withdraw()">Withdraw</button> -->
+
+            <button id = "deposit">Deposit</button>
+            <button id ="withdraw">Withdraw</button>
+
+    </section>
+
+    <H5>*** код дивитись в <a href="http://">script.js</a></H5>
 </body>
 </html>
