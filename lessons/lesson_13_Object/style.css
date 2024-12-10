@@ -8,6 +8,16 @@ body {
 
 h5{
     margin: 20px;
+    text-decoration: none;
+}
+h5::after{ content: "🧨🧨🧨"; } 
+a{
+    text-decoration: none;
+    color: rgb(60, 161, 153);
+}
+a:hover{
+    text-decoration: underline;
+    color: rgb(206, 52, 226);
 }
 
 section {
