@@ -49,3 +49,14 @@ border-radius: 5px;
 width: calc(100% - 20px);
 max-width: 300px;
 }
+
+#accountList {
+     list-style: none;  /* вимкнути стилізацію списку - нумерацію або маркування */
+}
+
+#delete {
+    background-color: rgb(247, 187, 58);
+}
+#delete:hover{
+    background-color: #e23c30;
+}

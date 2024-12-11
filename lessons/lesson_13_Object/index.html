@@ -15,6 +15,11 @@
         <input type="text" id = "name">
         <button onclick ="createAccount()">Create new account</button>
         <button id = "show" onclick ="showAccounts()">Show all accounts</button>
+        <div>
+        <label for="numberForRemove">Account Number:</label>
+        <input type="number" id = "numberForRemove">
+        <button id = "delete" onclick = "removeAccount()">Remove Account</button>
+        </div>
     </section>
 
     <br>
@@ -32,7 +37,7 @@
 
     <section id = "change">
             <label for="accountId">Account ID:</label>
-            <input type="text" id = "accountId">
+            <input type="number" id = "accountId">
 
             <label for="amount">Amount:</label>
            

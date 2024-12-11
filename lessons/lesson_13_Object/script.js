@@ -110,17 +110,119 @@ function createAccount() {
   console.log(bank)
 }
 
-function showAccounts() {
- let btn = document.querySelector("#show")
- let newLi;
- let place = document.getElementById("accountList")
-    btn.addEventListener("click", () => {
-        place.innerText = "";
-        for (let i = 0; i < bank.length; i++) {
-            newLi = document.createElement("li")
-          newLi.innerText = `Account number: ${bank[i].accountNumber}; Account owner: ${bank[i].accountHoldername}; Current Ballance: ${bank[i].balance}`
-         place.append(newLi)
-          } 
-    })
+// function showAccounts() {
+//  let btn = document.querySelector("#show")
+//  let newLi;
+//  let place = document.getElementById("accountList")
+//     btn.addEventListener("click", () => {
+//         place.innerText = "";
+//         for (let i = 0; i < bank.length; i++) {
+//             newLi = document.createElement("li")
+//           newLi.innerText = `Account number: ${bank[i].accountNumber}; Account owner: ${bank[i].accountHoldername}; Current Ballance: ${bank[i].balance}`
+//          place.append(newLi)
+//           } 
+//     })
 
+// }
+
+function showAccounts() {
+
+  const place = document.getElementById("accountList")
+  place.innerHTML = "";
+
+  // for (const element of bank) {
+  //   // const li = document.createElement("li")
+  //   // li.textContent = `Account number: ${element.accountNumber}; Account owner: ${element.accountHoldername}; Current Ballance: ${element.balance}`
+  //   // place.appendChild(li);
+
+  //     place.innerHTML += `<li> Account number: ${element.accountNumber}; Account owner: ${element.accountHoldername}; Current Ballance: ${element.balance}</li>`;
+
+  // }
+ 
+  
+  // For Loop використовувати можна завжди
+  //ForEach використовується тільки для масивів
+  //forin і forof використовується тільки для об'єктів (forin перебирає ключі або індекси, forof перебирає елементи)
+  //варіант з forEach(e, i) - e - елемент, i - індекс
+  //варіант з forEach(_, i) - в цьому випадку елемент не буде братись до уваги, буде використовуватись тільки індекс
+
+  bank.forEach((element, index) => {
+    place.innerHTML += `<li>${index + 1}. Account number: ${element.accountNumber}; Account owner: ${element.accountHoldername}; Current Ballance: ${element.balance}</li>`;
+  })
+ }
+
+const withdraw = document.getElementById("withdraw")
+const deposit = document.getElementById("deposit")
+
+deposit.onclick = function (){
+  const accountId = document.getElementById("accountId");
+  const accountIdValue = accountId.value.trim();
+  console.log(accountIdValue)
+  const amount = document.getElementById("amount");
+  const amountValue = amount.value.trim();
+  if (amountValue < 5 && amountValue >= 5000){ alert("Некоректна сумма поповнення !")}
+    
+  accountId.value = "";
+  amount.value = "";
+
+  let check = false;
+  bank.forEach(element => {
+    console.log(element.accountNumber)
+    if(element.accountNumber == accountIdValue){
+      check = true;
+      element.balance = amountValue;
+      alert(
+        `Сума ${amountValue} євро додана до рахунку. Поточний баланс: ${element.balance} євро.`
+      );
+    }
+   
+  });
+    if(!check) alert("Немає клієнта з вказаним ID")
+     
 }
+
+withdraw.onclick = function (){
+  //  TODO
+  const accountId = document.getElementById("accountId");
+  const accountIdValue = accountId.value.trim();
+  const amount = document.getElementById("amount");
+  const amountValue = amount.value.trim();
+
+  accountId.value = "";
+  amount.value = "";
+
+    let check = false;
+  bank.forEach(element => {
+    if(element.accountNumber == accountIdValue){
+      if (element.balance >= amountValue && amountValue > 0) {
+        element.balance -= amountValue;
+        alert(
+          `Сума ${amountValue} євро знята з рахунку. Поточний баланс: ${element.balance} євро.`
+        );
+      } else alert("Не достатньо грошей на рахунку !");
+      check = true;
+    }
+   
+  });
+    if(!check) alert("Немає клієнта з вказаним ID")
+     
+}
+
+function removeAccount(){
+
+let place = document.getElementById("numberForRemove")
+let removeId = place.value.trim() * 1; // множення на 1 - це парсинг з string  в number
+// let removeId = +place.value.trim(); // знак + - це парсинг з string  в number
+let check = false;
+
+bank.forEach((element, index) => {
+  if(element.accountNumber === removeId){
+    console.log("check")
+    bank.splice(index, 1)
+    alert(`Дані по клієнту з ID ${removeId} видалено !`)
+    check = true;
+  }//end if
+});
+place.value = "";
+  if(!check) alert("Немає клієнта з вказаним ID")
+}//end removeAccount
