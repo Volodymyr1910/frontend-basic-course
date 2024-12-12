@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="./script.js" defer></script>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>️💸</text></svg>">
+    <title>Bank</title>
+</head>
+<body>
+    
+    <section id = "create">
+        <label for="name">Name:</label>
+        <input type="text" id = "name">
+        <button onclick ="createAccount()">Create new account</button>
+        <button id = "show" onclick ="showAccounts()">Show all accounts</button>
+        <div>
+        <label for="numberForRemove">Account Number:</label>
+        <input type="number" id = "numberForRemove">
+        <button id = "delete" onclick = "removeAccount()">Remove Account</button>
+        </div>
+    </section>
+
+    <br>
+
+    <section>
+    <ol id = "accountList">
+       <!--     ul - unordered list ненумерований (маркований) список
+                ol - ordered list нумерований список -->
+      
+      <!-- <span><li>hhh</li><button class="removeLi" title="Видалити акаунт">X</button></span>         
+      <span><li>hhh</li><button class="removeLi" title="Видалити акаунт">X</button></span>         
+      <span><li>hhh</li><button class="removeLi" title="Видалити акаунт">X</button></span>          -->
+             
+            
+      </ol>
+      
+
+
+
+        
+    
+    </section>
+
+    <br>
+
+    <section id = "change">
+            <label for="accountId">Account ID:</label>
+            <input type="number" id = "accountId">
+
+            <label for="amount">Amount:</label>
+           
+            <input type="number" id = "amount"> <!-- value => string !!! -->
+
+            <!-- Use Event Listener 2 variants-->
+            <!-- <button onclick="deposit()">Deposit</button>
+            <button onclick="withdraw()">Withdraw</button> -->
+
+            <button id = "deposit">Deposit</button>
+            <button id ="withdraw">Withdraw</button>
+
+    </section>
+
+    <H5>*** код дивитись в <a href="https://github.com/Volodymyr1910/frontend-basic-course/blob/main/lessons/lesson_13_Object/script.js" target="_blank">script.js</a></H5>
+</body>
+</html>

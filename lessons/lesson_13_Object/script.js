@@ -40,7 +40,7 @@ for (const key in user) {
 user.greet = function () {
   console.log(`Привіт, мене звуть ${this.name} і мені ${this.age}`);
 };
-user.greet;
+user.greet();
 
 // створити об'єкт, який буде називатись bankAccount:
 /*
@@ -62,13 +62,28 @@ user.greet;
 
 */
 
+// alert("Привiт з модального вікна"); // повідомлення
+// let answer = confirm("Ви дійсно хочете закрити сторінку ?"); // отримання від користувача підтвердження або відмови в форматі boolean (true or false)
+// let info = prompt("Введіть ваше ім'я:"); // отримання від користувача інформації в форматі string (або null якщо нічого не введено)
+
+// if (typeof info === "string"){
+// }
+
+// do{
+//   let info = prompt("Введіть ваше ім'я:"); // отримання від користувача інформації в форматі string (або null якщо нічого не введено)
+// }while(!typeof info === "string")
+
+// if (info){
+// //String (крім пустої строки)
+// }
+
 let bankAccount = {
   accountNumber: "123456789",
   accountHoldername: "Alice",
   balance: 0,
 };
 
-bankAccount.deposit = function () {
+bankAccount.deposit = function (sum) {
   if (sum < 5 && sum >= 5000) console.log("Некоректна сумма поповнення !");
   /* sum >= 5 && sum <= 5000 ? this.balance += sum : alert ("console.log(Некоректна сумма поповнення !)") */ else {
     this.balance += sum;
@@ -99,7 +114,9 @@ function createAccount() {
   if (name) {
     bank.push({
       ...bankAccount,
-      accountNumber: bank.length + 1,
+      accountNumber: bank.length + 1, // в даному випадку номер акаунта буде зберігатись в форматі числа
+      // accountNumber: (bank.length + 1).toString(), // в даному випадку номер акаунта буде зберігатись в форматі string
+      
       accountHoldername: name,
     });
     alert("Account created successfully");
@@ -154,59 +171,148 @@ function showAccounts() {
 const withdraw = document.getElementById("withdraw")
 const deposit = document.getElementById("deposit")
 
-deposit.onclick = function (){
-  const accountId = document.getElementById("accountId");
-  const accountIdValue = accountId.value.trim();
-  console.log(accountIdValue)
-  const amount = document.getElementById("amount");
-  const amountValue = amount.value.trim();
-  if (amountValue < 5 && amountValue >= 5000){ alert("Некоректна сумма поповнення !")}
+//моя функція
+// deposit.onclick = function (){
+//   const accountId = document.getElementById("accountId");
+//   const accountIdValue = accountId.value.trim();
+//   console.log(accountIdValue)
+//   const amount = document.getElementById("amount");
+//   const amountValue = amount.value.trim();
+//   if (amountValue < 5 && amountValue >= 5000){ alert("Некоректна сумма поповнення !")}
     
-  accountId.value = "";
-  amount.value = "";
+//   accountId.value = "";
+//   amount.value = "";
 
-  let check = false;
-  bank.forEach(element => {
-    console.log(element.accountNumber)
-    if(element.accountNumber == accountIdValue){
-      check = true;
-      element.balance = amountValue;
-      alert(
-        `Сума ${amountValue} євро додана до рахунку. Поточний баланс: ${element.balance} євро.`
-      );
-    }
+//   let check = false;
+//   bank.forEach(element => {
+//     console.log(element.accountNumber)
+//     if(element.accountNumber == accountIdValue){
+//       check = true;
+//       element.balance = amountValue;
+//       alert(
+//         `Сума ${amountValue} євро додана до рахунку. Поточний баланс: ${element.balance} євро.`
+//       );
+//     }
    
-  });
-    if(!check) alert("Немає клієнта з вказаним ID")
+//   });
+//     if(!check) alert("Немає клієнта з вказаним ID")
      
-}
+// }
 
+//функція вчителя
+deposit.onclick = function (){
+
+  operation("deposit");
+  /*
+  //лінки на елементи
+  const accountIdInput = document.getElementById("accountId");
+  const amountInput = document.getElementById("amount");
+  
+  //отримання значень в полях
+  // input.value => string
+  // Number ('0'); parseInt(); parseFloat(); +'0'; eval('10 + 10 - 5'); * 1
+  const accountId2 = +accountIdInput.value.trim(); //number (число або NaN)
+  const accountFind2 = bank.find(e => e.accountNumber === accountId2) // шукає елемент, що задовольняє умову і повертає перший знайдений елемент в форматі числа або undefined, якщо елемент не знайдено
+  // bank.findIndex(e => e.accountNumber === accountId2) //шукає елемент, що задовольняє умову і повертає індекс першого знайденого елемента або -1, якщо елемент не знайдено
+  
+  const accountId = accountIdInput.value.trim(); //строка
+  const accountFind = bank.find(e => e.accountNumber.toString() === accountId) // шукає і повертає елемент в форматі строки  або undefined 
+
+
+  const amount = +amountInput.value.trim(); //number (число або NaN)
+  isNaN(amount) // => поверне true якщо amount = NaN, або false в усіх інших випадках
+  
+  // класичний метод з циклом
+  // let acount;
+  // bank.forEach(e => {
+  // if(e.accountNumber === accountId){
+  //   acount = e;
+  //   return;
+  // }
+  // })
+
+  if(accountFind)accountFind.deposit(amount);
+  else alert("Немає клієнта з вказаним ID");
+  accountIdInput.value = ""
+  amountInput.value = "" */
+
+  
+}// end deposit.onclick = function
+
+//моя функція
+// withdraw.onclick = function (){
+//   const accountId = document.getElementById("accountId");
+//   const accountIdValue = accountId.value.trim();
+//   const amount = document.getElementById("amount");
+//   const amountValue = amount.value.trim();
+
+//   accountId.value = "";
+//   amount.value = "";
+
+//     let check = false;
+//   bank.forEach(element => {
+//     if(element.accountNumber == accountIdValue){
+//       if (element.balance >= amountValue && amountValue > 0) {
+//         element.balance -= amountValue;
+//         alert(
+//           `Сума ${amountValue} євро знята з рахунку. Поточний баланс: ${element.balance} євро.`
+//         );
+//       } else alert("Не достатньо грошей на рахунку !");
+//       check = true;
+//     }
+   
+//   });
+//     if(!check) alert("Немає клієнта з вказаним ID")
+     
+// }
+
+//функція вчителя
 withdraw.onclick = function (){
-  //  TODO
-  const accountId = document.getElementById("accountId");
-  const accountIdValue = accountId.value.trim();
-  const amount = document.getElementById("amount");
-  const amountValue = amount.value.trim();
+ 
+  operation("withdraw");
 
-  accountId.value = "";
-  amount.value = "";
+ 
+//  const accountIdInput = document.getElementById("accountId");
+//  const amountInput = document.getElementById("amount");
+ 
+//  const accountId = accountIdInput.value.trim(); //строка
+//  const amount = +amountInput.value.trim(); //number (число або NaN)
+ 
+//  const accountFind = bank.find(e => e.accountNumber.toString() === accountId) // шукає і повертає елемент в форматі строки  або undefined 
 
-    let check = false;
-  bank.forEach(element => {
-    if(element.accountNumber == accountIdValue){
-      if (element.balance >= amountValue && amountValue > 0) {
-        element.balance -= amountValue;
-        alert(
-          `Сума ${amountValue} євро знята з рахунку. Поточний баланс: ${element.balance} євро.`
-        );
-      } else alert("Не достатньо грошей на рахунку !");
-      check = true;
+//  if(accountFind)accountFind.withdraw(amount);
+//  else alert("Немає клієнта з вказаним ID");
+
+//  accountIdInput.value = ""
+//  amountInput.value = ""
+
+}// end withdraw.onclick = function 
+
+
+//функція вчителя
+function operation(operator){
+ 
+  const accountIdInput = document.getElementById("accountId");
+  const amountInput = document.getElementById("amount");
+  
+  const accountId = accountIdInput.value.trim(); //строка
+  const amount = +amountInput.value.trim(); //number (число або NaN)
+  
+  const accountFind = bank.find(e => e.accountNumber.toString() === accountId) // шукає і повертає елемент в форматі строки  або undefined 
+ 
+  if(accountFind){
+    if(operator === 'deposit'){
+      accountFind.deposit(amount);
+    }else {
+      accountFind.withdraw(amount);
     }
-   
-  });
-    if(!check) alert("Немає клієнта з вказаним ID")
-     
-}
+  }else alert("Немає клієнта з вказаним ID");
+
+  accountIdInput.value = ""
+  amountInput.value = ""
+ 
+ }// end withdraw.onclick = function 
+ 
 
 function removeAccount(){
 
