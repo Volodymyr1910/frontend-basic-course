@@ -48,56 +48,36 @@ function createAccount() {
 } //function createAccount()
 
 function showAccounts() {
-  let place = document.getElementById("accountList");
+  const place = document.getElementById("accountList");
   place.innerHTML = "";
 
   bank.forEach((element, index) => {
-    //cтворення елементу span
-    let span = document.createElement("span");
+    // place.innerHTML += `<li>${index + 1}. Account number: ${
+    //   element.accountNumber
+    // }; Account owner: ${element.accountHoldername}; Current Ballance: ${
+    //   element.balance
+    // }
+    //   </li>`;
 
-    //створюємо елемент li з інформацією про акаунт і кладемо в елемент span
-    span.innerHTML += `<li>${index + 1}. Account number: ${
-      element.accountNumber
-    }; Account owner: ${element.accountHoldername}; Current Ballance: ${
-      element.balance
-    }</li>`;
 
-    //створюємо кнопку для видалення акаунта і наділяємо її властивостями з css
-    const btn = document.createElement("button");
-    btn.className = "removeLi";
-    btn.title = "Видалити акаунт";
-    btn.innerText = "X";
+      const li = document.createElement('li');
+      li.textContent = `ID: ${account.accountNumber}, Name: ${account.accountHolderName}, Balance: ${account.balance}`;
+      accountList.append(li);
 
-    // кнопка видалення і елемент, що містить інформацію про акаунт зв'язані спільним id
-    span.id = element.accountNumber;
-    btn.id = element.accountNumber;
+    const deleteBtn = document.createElement("button");
+    deleteBtn.textContent = "Delete";
 
-    //додаємо кнопку в елемент span
-    span.append(btn);
+    li.append(deleteBtn);
+    place.append(li);
 
-    //додаємо зформований span в елемент ol
-    place.append(span);
-  });
+    deleteBtn.onclick = function () {
+        bank.splice(index, 1);
+        li.remove();
+        
+    }; //end  deleteBtn.onclick = function()
+    
+  }); // end  bank.forEach((element, index)
 } //end function showAccounts()
-
-// //Знаходимо кнопку видалення акаунта по імені класу
-// const btns_ForRemove = document.querySelectorAll(".removeLi");
-// console.log("кнопки", btns_ForRemove)
-// //додаємо слухача
-// btns_ForRemove.forEach((btnForRemove) => {
-//   btnForRemove.addEventListener("click", () => {
-//     //знаходимо елемент span, в якому лежить кнопка і відповідний акаунт
-//     const spanForRemove = btnForRemove.closest("span");
-//     console.log("найближчий спан", spanForRemove)
-//     //перевіряємо чи існує span, перевіряємо співпадіння ID, видаляємо елемент з усім змістом
-//     if (spanForRemove) {
-//       if (spanForRemove.id === btnForRemove.id) {
-//         alert(`Дані по клієнту з ID ${btnForRemove.id} видалено !`);
-//         spanForRemove.remove();
-//       } //end if(spanForRemove.id === btnForRemove.id)
-//     } //end if(spanForRemove)
-//   }); //end btnForRemove.addEventListener("click"
-// }); //end btns_ForRemove.forEach (btnForRemove
 
 //включаємо слухача на event - клік на об'єкт, що з'явиться на сторінці html (тобто одразу його на сторінці немає)
 document.body.addEventListener("click", (event) => {
@@ -115,10 +95,10 @@ document.body.addEventListener("click", (event) => {
         alert(`Дані по клієнту з ID ${event.target.id} видалено!`);
 
         //видаляємо елемент з усім змістом і відповідний еплемент масиву
-        console.log("довжина масиву", bank.length)
+        console.log("довжина масиву", bank.length);
         console.log(bank[spanForRemove.id - 1]);
         bank.splice(spanForRemove.id - 1, 1);
-        console.log("довжина масиву після видалення", bank.length)
+        console.log("довжина масиву після видалення", bank.length);
 
         spanForRemove.remove();
       } //end if (spanForRemove)

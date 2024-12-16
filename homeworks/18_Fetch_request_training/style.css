@@ -1,0 +1,22 @@
+
+h1{
+    display: flex;
+    justify-content: center;
+    color: rgb(80, 130, 224);
+}
+#grid-container{
+
+    display: grid;
+    grid-template-columns: repeat( auto-fill, minmax(200px,1fr));
+    grid-auto-rows: 200px;
+    justify-content: center;
+    gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+#grid-item-text{
+    background-color: rgb(236, 233, 233);
+    color: rgb(240, 156, 83);
+}

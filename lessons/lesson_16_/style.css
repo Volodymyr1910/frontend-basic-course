@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+     line-height: 1.6; /* інтервал між строками */
+     margin: 0;
+     padding: 0;background-color: #f4f4f9;
+     color: #333;
+}
+
+h5{
+    margin: 20px;
+    text-decoration: none;
+}
+h5::after{ content: "🧨🧨🧨"; } 
+a{
+    text-decoration: none;
+    color: rgb(60, 161, 153);
+}
+a:hover{
+    text-decoration: underline;
+    color: rgb(206, 52, 226);
+}
+
+section {
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    margin: 10px 5px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #0056b3;
+}
+input {
+padding: 8px;
+margin: 5px;
+border: 1px solid #ccc;
+border-radius: 5px;
+width: calc(100% - 20px);
+max-width: 300px;
+}
+
+#accountList {
+     list-style: none;  /* вимкнути стилізацію списку - нумерацію або маркування */
+   
+
+}
+
+#delete {
+    background-color: rgb(247, 187, 58);
+}
+#delete:hover{
+    background-color: #e23c30;
+}
+
+.removeLi {
+width: 20px;
+height: 20px;
+background-color: rgb(247, 187, 58);
+display:flex;
+justify-content: center;
+align-items: center;
+
+}
+
+.removeLi:hover{
+    width: 40px;
+    height: 20x;
+    background-color: #e23c30;
+    
+    }
+
+    span{
+       display: grid;
+       justify-content: space-between;
+        display: flex;
+        align-items: center;
+        
+    }
