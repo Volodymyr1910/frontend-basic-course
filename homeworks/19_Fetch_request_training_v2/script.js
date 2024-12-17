@@ -65,7 +65,7 @@ fetch('//dummyjson.com/products')
        
         
         // gridElementPicture.append(gridElementPictureImage);
-        gridElementText.append(hName, hDescription, hPrice)
+        gridElementText.append(hName, hPrice, hDescription)
         
         gridElement.append(gridElementText, gridElementPicture)
     
