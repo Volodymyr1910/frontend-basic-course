@@ -7,7 +7,7 @@
  
 
  .then(data => {
-
+console.log(data)
    
    let newArray =  data.results.map( element => {
 

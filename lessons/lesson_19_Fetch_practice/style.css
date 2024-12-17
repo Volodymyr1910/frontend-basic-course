@@ -1,0 +1,31 @@
+.grid-products {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+gap: 10px;
+}
+
+.product-card {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 20px 30px;
+}
+
+/* всі img картинки всередині product-card будуть мати ширину 80% від ширини картки product-card*/ 
+/*  
+.product-card > img{
+   
+ width: 80%; 
+} */
+  
+.img-wrapper {
+    /* жорстко задаємо розміри контейнера по вертикалі */
+    height: 200px;
+    width: 80%; 
+}
+
+.img-wrapper > img{
+ width: 100%;
+ height: 100%;
+ /* задаємо contain щоб вмістити картинку в її контейнері */
+    object-fit: contain;
+}
