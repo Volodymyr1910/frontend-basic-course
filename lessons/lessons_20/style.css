@@ -2,12 +2,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
- 
 }
 
 body {
   padding: 20px;
-  width: 100vw; 
+  width: 100vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -15,10 +14,9 @@ body {
   align-items: center;
   background-image: url("./блискавка.jpg");
   background-position: center;
-   background-size: cover;
-  background-repeat: no-repeat; 
+  background-size: cover;
+  background-repeat: no-repeat;
 }
-
 
 main {
   margin: 100px 100px;
@@ -50,13 +48,13 @@ div > p {
   align-items: flex-start;
 }
 
-h4{
-    color: rgb(100, 174, 240);
+h4 {
+  color: rgb(100, 174, 240);
 }
-a{
-    color: rgb(100, 174, 240);
-    text-decoration: none;
+a {
+  color: rgb(100, 174, 240);
+  text-decoration: none;
 }
-a:hover{
-    text-decoration: underline;
+a:hover {
+  text-decoration: underline;
 }
